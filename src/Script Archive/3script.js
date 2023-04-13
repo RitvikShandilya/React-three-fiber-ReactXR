@@ -28,29 +28,7 @@ const geometry = new THREE.BoxGeometry(1, 1, 1);
 const material = new THREE.MeshBasicMaterial({color: 0xff0000 });
 const mesh = new THREE.Mesh(geometry, material);
 
-//Below code should be before renderer.render
-//mesh.position.y = 1;
-//mesh.position.z = 1;
-//mesh.position.z = 1;
-//doinf the above with one life of code below
-mesh.position.set(0.5, -0.5, 0.2);
 scene.add(mesh);
-//mesh.position.normalize();
-
-//Axes Helper
-const axesHelper = new THREE.AxesHelper();
-scene.add(axesHelper);
-
-// console.log(mesh.position.length()); //from center to object
-
-// Scale
-//mesh.scale.x = 2;
-mesh.scale.set(1, 0.5, 0.5);
-//default for above is one
-
-//you can reorder before changing the rotation
-//mesh.rotation.reorder('YXZ');
-mesh.rotation.y = Math.PI/2;
 
 //Camera
 //not visible
@@ -65,11 +43,8 @@ const sizes = {
     height: 600
 }
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height);
-camera.position.z = 5;
-camera.position.y = 1;
+camera.position.z = 3;
 scene.add(camera);
-
-// console.log(mesh.position.distanceTo(camera.position)); // from camera to object
 
 //RENDERER
 //Render the scene from the camera point of view

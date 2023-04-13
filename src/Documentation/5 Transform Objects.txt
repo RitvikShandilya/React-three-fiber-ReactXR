@@ -1,0 +1,21 @@
+There are 4 properties to transform objects
+1. position
+2. scale
+3. rotation
+4. quaternion
+
+All classes that inherit from Object3D possess properties like PerspectiveCamera or MeshBasicMaterial
+
+OBJECT3D -> CAMERA -> PERSPECTIVECAMERA
+OBJECT3D -> MESH
+
+Position is a Vector3
+
+console.log(mesh.position.length());
+Above is to calculate the dist between center of screenand our object
+
+console.log(mesh.position.distanceTo(camera.position)); // from camera to object
+
+Positioning things in space can be difficult, we can use AxesHelper for it
+
+Rotation auto change quarternon and vice versa
