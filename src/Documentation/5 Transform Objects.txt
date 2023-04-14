@@ -19,3 +19,7 @@ console.log(mesh.position.distanceTo(camera.position)); // from camera to object
 Positioning things in space can be difficult, we can use AxesHelper for it
 
 Rotation auto change quarternon and vice versa
+
+You can combine position, rotation, quaternion and scale in any order
+
+Yu can put objects inside groups and use position, rotation and scale on those groups, use Group class for that

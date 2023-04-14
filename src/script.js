@@ -9,6 +9,29 @@ console.log(THREE);
 
 const scene = new THREE.Scene()
 
+
+//Grouping multiple objects
+
+const group = new THREE.Group();
+scene.add(group);
+
+const cube1 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0xff0000 })
+)
+const cube2 = new THREE.Mesh(
+    new THREE.BoxGeometry(1, 1, 1),
+    new THREE.MeshBasicMaterial({ color: 0x00ff00 })
+)
+
+cube1.position.x = -2;
+
+group.add(cube1);
+group.add(cube2);
+
+group.scale.y = 2;
+group.rotation.y = 1;
+
 //we need to create an object now
 // object can be many thing like
     //primitive geometries
@@ -69,6 +92,8 @@ camera.position.z = 5;
 camera.position.y = 1;
 scene.add(camera);
 
+//camera.lookAt(new THREE.Vector3(3,0,0));
+// camera.lookAt(mesh.position);
 // console.log(mesh.position.distanceTo(camera.position)); // from camera to object
 
 //RENDERER
