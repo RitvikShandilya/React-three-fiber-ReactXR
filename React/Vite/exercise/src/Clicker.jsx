@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 export default function Clicker({increment, keyName, color}) {
 
     const [count, setCount] = useState(0);
-
+    const buttonRef = useRef();
 //Calling a function on first render
     useEffect(() => {
         console.log('hello');
-
+        console.log(buttonRef.current);;
         return () => {
             console.log('component destroyed');
         }
@@ -26,6 +26,6 @@ useEffect(() => {
     
     return <div>
         <div style = {{ color: color }}>Clicks Count: {count}</div>
-        <button onClick={buttonClick}>Click me</button>
+        <button ref = { buttonRef } onClick={buttonClick}>Click me</button>
     </div>
 }
