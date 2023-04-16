@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Clicker({keyName, color}) {
+export default function Clicker({increment, keyName, color}) {
 
     const [count, setCount] = useState(0);
 
@@ -21,6 +21,7 @@ useEffect(() => {
 
     const buttonClick = () => {
         setCount(count + 1);
+        increment();
     }
     
     return <div>

@@ -6,6 +6,6 @@ const root = createRoot(document.querySelector('#root'))
 //or <App />
 root.render(
     <>
-    <App></App> 
+    <App clickersCount = {4}></App> 
     </>
 )
